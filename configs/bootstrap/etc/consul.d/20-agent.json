@@ -1,0 +1,7 @@
+{
+  "bootstrap": true,
+  "datacenter": "us",
+  "data_dir": "/var/lib/consul",
+  "enable_syslog": true,
+  "server": true
+}

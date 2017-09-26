@@ -1,0 +1,11 @@
+{
+  "datacenter": "us",
+  "data_dir": "/var/lib/consul",
+  "enable_syslog": true,
+  "recursors":["8.8.8.8"],
+  "start_join": [
+    "1.server.consul.p.va.us.strikead.com",
+    "2.server.consul.p.va.us.strikead.com",
+    "3.server.consul.p.va.us.strikead.com"
+  ]
+}
