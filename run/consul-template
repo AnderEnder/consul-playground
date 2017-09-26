@@ -1,0 +1,1 @@
+sudo ./consul-template -template '/etc/nginx/nginx.conf.tmpl:/etc/nginx/conf.d/default.conf:nginx -s reload'

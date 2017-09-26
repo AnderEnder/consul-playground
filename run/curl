@@ -1,0 +1,22 @@
+# register
+curl -X PUT -d '{
+  "ID": "srv1",
+  "Name": "web",
+  "Address": "10.1.1.252",
+  "Port": 8080
+}' http://127.0.0.1:8500/v1/agent/service/register
+
+# deregister
+curl -X PUT http://127.0.0.1:8500/v1/agent/service/deregister/srv1
+
+
+# register external service
+curl -X PUT -d '{
+  "Datacenter": "us",
+  "Node": "google",
+  "Address": "www.google.com",
+  "Service": {
+    "Service": "search",
+    "Port": 80
+  }
+}' http://127.0.0.1:8500/v1/catalog/register

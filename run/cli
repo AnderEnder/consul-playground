@@ -1,0 +1,31 @@
+consul members
+Node                                  Address          Status  Type    Build     Protocol  DC  Segment
+1.server.consul.p.va.us.strikead.com  10.1.0.11:8301   alive   server  0.9.4dev  2         us  <all>
+2.server.consul.p.va.us.strikead.com  10.1.0.148:8301  alive   server  0.9.4dev  2         us  <all>
+3.server.consul.p.va.us.strikead.com  10.1.0.208:8301  alive   server  0.9.4dev  2         us  <all>
+1.agent.consul.p.va.us.strikead.com   10.1.1.252:8301  alive   client  0.9.4dev  2         us  <default>
+2.agent.consul.p.va.us.strikead.com   10.1.1.37:8301   alive   client  0.9.4dev  2         us  <default>
+
+consul catalog services
+consul
+nginx
+search
+
+consul catalog services --tags
+consul
+nginx       proxy,v1
+search
+
+
+consul catalog nodes
+Node                                  ID        Address         DC
+1.agent.consul.p.va.us.strikead.com   dfdde681  10.1.1.252      us
+1.server.consul.p.va.us.strikead.com  852bd44a  10.1.0.11       us
+2.agent.consul.p.va.us.strikead.com   86465b46  10.1.1.37       us
+2.server.consul.p.va.us.strikead.com  121c4921  10.1.0.148      us
+3.server.consul.p.va.us.strikead.com  011a8c1d  10.1.0.208      us
+google                                          www.google.com  us
+
+
+consul catalog datacenters
+us

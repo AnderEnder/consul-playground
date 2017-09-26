@@ -1,0 +1,101 @@
+dig @127.0.0.1 -p 8600 proxy.nginx.service.consul A
+
+; <<>> DiG 9.10.3-P4-Ubuntu <<>> @127.0.0.1 -p 8600 proxy.nginx.service.consul A
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 20295
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;proxy.nginx.service.consul.    IN      A
+
+;; ANSWER SECTION:
+proxy.nginx.service.consul. 0   IN      A       10.1.1.252
+
+;; Query time: 1 msec
+;; SERVER: 127.0.0.1#8600(127.0.0.1)
+;; WHEN: Mon Sep 25 16:25:06 UTC 2017
+;; MSG SIZE  rcvd: 71
+
+
+
+$ dig @127.0.0.1 -p 8600 proxy.nginx.service.consul SRV
+
+; <<>> DiG 9.10.3-P4-Ubuntu <<>> @127.0.0.1 -p 8600 proxy.nginx.service.consul SRV
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 2310
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 2
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;proxy.nginx.service.consul.    IN      SRV
+
+;; ANSWER SECTION:
+proxy.nginx.service.consul. 0   IN      SRV     1 1 80 1.agent.consul.p.va.us.strikead.com.node.us.consul.
+
+;; ADDITIONAL SECTION:
+1.agent.consul.p.va.us.strikead.com.node.us.consul. 0 IN A 10.1.1.252
+
+;; Query time: 1 msec
+;; SERVER: 127.0.0.1#8600(127.0.0.1)
+;; WHEN: Tue Sep 26 14:15:17 UTC 2017
+;; MSG SIZE  rcvd: 135
+
+
+
+dig @127.0.0.1 -p 8600 search.service.consul A
+
+; <<>> DiG 9.10.3-P4-Ubuntu <<>> @127.0.0.1 -p 8600 search.service.consul A
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 24709
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;search.service.consul.         IN      A
+
+;; ANSWER SECTION:
+search.service.consul.  0       IN      CNAME   www.google.com.
+www.google.com.         299     IN      A       172.217.7.164
+
+;; Query time: 13 msec
+;; SERVER: 127.0.0.1#8600(127.0.0.1)
+;; WHEN: Tue Sep 26 14:16:05 UTC 2017
+;; MSG SIZE  rcvd: 94
+
+
+dig @127.0.0.1 -p 8600 search.service.consul SRV
+
+; <<>> DiG 9.10.3-P4-Ubuntu <<>> @127.0.0.1 -p 8600 search.service.consul SRV
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 25787
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 3
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;search.service.consul.         IN      SRV
+
+;; ANSWER SECTION:
+search.service.consul.  0       IN      SRV     1 1 80 google.node.us.consul.
+
+;; ADDITIONAL SECTION:
+google.node.us.consul.  0       IN      CNAME   www.google.com.
+www.google.com.         299     IN      A       172.217.7.164
+
+;; Query time: 13 msec
+;; SERVER: 127.0.0.1#8600(127.0.0.1)
+;; WHEN: Tue Sep 26 14:15:41 UTC 2017
+;; MSG SIZE  rcvd: 129
+
